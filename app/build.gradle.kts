@@ -1,6 +1,11 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.hilt)
+
 }
 
 android {
@@ -49,7 +54,26 @@ android {
     }
 }
 
+composeCompiler {
+    reportsDestination = layout.buildDirectory.dir("compose_compiler")
+    // enableStrongSkippingMode = true
+    // stabilityConfigurationFile = rootProject.layout.projectDirectory.file("stability_config.conf")
+}
+
+
 dependencies {
+
+    //Module . . . . . . . .
+    implementation(project(":feature:chat"))
+    implementation(project(":feature:conversations"))
+    implementation(project(":feature:create_chat"))
+
+    //HILT . . . . . . . . . .
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
+
+    //NAVIGATION-COMPOSE
+    implementation(libs.navigation.compose)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -66,4 +90,9 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+}
+
+
+ksp {
+    arg("dagger.hilt.android.internal.disableAndroidSuperclassValidation", "true")
 }
