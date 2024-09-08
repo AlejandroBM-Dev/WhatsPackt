@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="conversations_list_title">Chats</string>
+
+    <string name="conversations_tab_status_title">Status</string>
+    <string name="conversations_tab_chats_title">Chat</string>
+    <string name="conversations_tab_calls_title">Calls</string>
+    <string name="f_btn_string_add">Add</string>
+</resources>

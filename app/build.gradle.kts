@@ -70,6 +70,7 @@ dependencies {
 
     //HILT . . . . . . . . . .
     implementation(libs.hilt.android)
+    implementation(project(":common:framework"))
     ksp(libs.hilt.android.compiler)
 
     //NAVIGATION-COMPOSE

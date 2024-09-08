@@ -1,5 +1,6 @@
 [versions]
 agp = "8.5.2"
+coilCompose = "2.7.0"
 hiltAndroid = "2.51.1"
 ksp = "2.0.20-1.0.24"
 kotlin = "2.0.20"
@@ -16,12 +17,13 @@ material = "1.12.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
-
+##HILT
 hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hiltAndroid" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
-
 ##NAVIGATION
 navigation-compose = { group = "androidx.navigation", name  = "navigation-compose", version.ref = "navigationCompose" }
+##COIL
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coilCompose"}
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
