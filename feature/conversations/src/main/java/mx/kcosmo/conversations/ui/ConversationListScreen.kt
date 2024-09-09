@@ -34,7 +34,7 @@ fun ConversationListScreen(
 ) {
     val tabs = generateTabs()
     val selectedIndex = remember { mutableStateOf(1) }
-    val pagerState = rememberPagerState(initialPage = 1) { 1 }
+    val pagerState = rememberPagerState(initialPage = 1) { 3 }
 
     Scaffold(
         topBar = {
