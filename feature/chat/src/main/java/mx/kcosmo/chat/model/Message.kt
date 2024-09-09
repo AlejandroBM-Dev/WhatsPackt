@@ -6,10 +6,16 @@ data class Message(
     val senderAvatar: String,
     val timestamp: String,
     val isMine: Boolean,
-    val messageContent: MessageContent
+    val messageContent: MessageContent,
 )
 
 sealed class MessageContent {
-    data class TextMessage(val message: String): MessageContent()
-    data class ImageMessage(val imageUrl: String, val contentDescription: String): MessageContent()
+    data class TextMessage(
+        val message: String,
+    ) : MessageContent()
+
+    data class ImageMessage(
+        val imageUrl: String,
+        val contentDescription: String,
+    ) : MessageContent()
 }

@@ -11,18 +11,23 @@ import androidx.compose.ui.unit.dp
 import mx.kcosmo.chat.model.Message
 import mx.kcosmo.framework.navigation.Avatar
 
+@Suppress("ktlint:standard:function-naming")
 @Composable
 fun MessageItem(message: Message) {
     Row(
         modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = if (message.isMine)
-        Arrangement.End else Arrangement.Start
+        horizontalArrangement =
+            if (message.isMine) {
+                Arrangement.End
+            } else {
+                Arrangement.Start
+            },
     ) {
         if (message.isMine) {
             Avatar(
                 imageUrl = message.senderAvatar,
                 size = 40.dp,
-                contentDescription = "${message.senderAvatar}´s avatar"
+                contentDescription = "${message.senderAvatar}´s avatar",
             )
             Spacer(modifier = Modifier.width(8.dp))
         }
